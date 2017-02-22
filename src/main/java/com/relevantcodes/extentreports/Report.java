@@ -402,7 +402,7 @@ abstract class Report extends LogSettings implements Serializable {
         
         if (test.hasChildNodes) {
             List<Test> nodeList = test.getNodeList();
-        
+
             for (Test node : nodeList) {
                 updateTestStatusList(node);
             }

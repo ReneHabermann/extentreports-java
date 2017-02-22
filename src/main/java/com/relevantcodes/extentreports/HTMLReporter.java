@@ -55,9 +55,8 @@ public class HTMLReporter extends LogSettings implements IReporter {
     private String filePath;
 
     // folder where offline artifacts are stored
-    private final String offlineFolderParent = "extentreports";
+    private final String offlineFolderParent = "report";
 
-    @Override
     public void start(Report report) {
         this.report = report;
         
@@ -150,7 +149,10 @@ public class HTMLReporter extends LogSettings implements IReporter {
         
         // copy files to extent/dir
         for (String f : css) {
-            Resources.moveResource(cssPath + f, destPath + "css" + s + f);
+            String resourcePath = cssPath + f;
+            String copyPath = destPath + "css" + s + f;
+            System.out.println("Moving "+resourcePath+" to "+copyPath);
+            Resources.moveResource(resourcePath, copyPath);
         }
         for (String f : fonts) {
             Resources.moveResource(fontsPath + f, destPath + "css" + s + "fonts" + s + f);
@@ -160,8 +162,7 @@ public class HTMLReporter extends LogSettings implements IReporter {
         }
     }
     
-    @Override
-    public synchronized void flush() {       
+    public synchronized void flush() {
         String extentSource = null;
         
         try {
@@ -195,18 +196,15 @@ public class HTMLReporter extends LogSettings implements IReporter {
         return cfg;
     }
     
-    @Override
     public void stop() {
         
     }
     
-    @Override
     public void setTestRunnerLogs() {
 
     }
     
     // adds tests as HTML source
-    @Override
     public synchronized void addTest(Test test) { }
     
     public Map<String, String> getConfigurationMap() {

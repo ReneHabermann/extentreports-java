@@ -18,7 +18,8 @@ import java.io.Serializable;
  */
 public enum LogStatus implements Serializable {
     PASS, 
-    FAIL, 
+//    DEBUG,
+    FAIL,
     FATAL, 
     ERROR, 
     WARNING, 
@@ -36,6 +37,7 @@ public enum LogStatus implements Serializable {
             case WARNING: return "warning";
             case INFO: return "info";
             case SKIP: return "skip";
+//            case DEBUG: return "debug";
             default: return "unknown";
         }
     }

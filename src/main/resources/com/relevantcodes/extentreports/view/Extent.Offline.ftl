@@ -25,7 +25,7 @@
 			</#if>
 		</title>
 		
-		<link href='./extentreports/css/css.css' type='text/css' rel='stylesheet' />
+		<link href='./report/css/css.css' type='text/css' rel='stylesheet' />
 		
 		<style>
 			<#if report.configurationMap??>
@@ -314,7 +314,7 @@
 																<th>${resourceBundle.getString("tests.test.log.th.status")}</th>
 																<th>${resourceBundle.getString("tests.test.log.th.timestamp")}</th>
 																<#if (test.logList[0].stepName)??>
-																	<th>StepName</th>
+																	<th>Logger</th>
 																</#if>
 																<th>${resourceBundle.getString("tests.test.log.th.details")}</th>
 															</tr>
@@ -358,7 +358,7 @@
 																							<th>${resourceBundle.getString("tests.test.log.th.status")}</th>
 																							<th>${resourceBundle.getString("tests.test.log.th.timestamp")}</th>
 																							<#if (node.logList[0].stepName)??>
-																								<th>StepName</th>
+																								<th>Logger</th>
 																							</#if>
 																							<th>${resourceBundle.getString("tests.test.log.th.details")}</th>
 																						</tr>
@@ -652,7 +652,7 @@
 		</div>
 		<!-- /filter for step status -->
 		
-		<script type='text/javascript' src='./extentreports/js/scripts.js'></script>		
+		<script type='text/javascript' src='./report/js/scripts.js'></script>		
 		<script>jQuery(document).ready(function() { jQuery('.logo span').html('ExtentReports'); });</script>
 		<script>
 			<#if report.configurationMap??>

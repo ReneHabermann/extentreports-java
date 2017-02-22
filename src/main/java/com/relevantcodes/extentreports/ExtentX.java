@@ -43,7 +43,6 @@ public class ExtentX extends LogSettings implements IReporter {
     private MongoCollection<Document> categoriesTests;
     private MongoCollection<Document> authorsTests;
 
-    @Override
     public void start(Report report) {
         this.report = report;
         
@@ -63,12 +62,10 @@ public class ExtentX extends LogSettings implements IReporter {
         authorsTests = db.getCollection("author_tests__test_authors");
     }
     
-    @Override
     public void stop() {
         mongoClient.close();
     }
     
-    @Override
     public void flush() {
         if (reportId == null)
             insertReport();
@@ -130,7 +127,6 @@ public class ExtentX extends LogSettings implements IReporter {
         report.setMongoDBObjectID(reportId.toString());
     }
     
-    @Override
     public void addTest(Test test) {
         if (reportId == null)
             insertReport();
@@ -284,7 +280,6 @@ public class ExtentX extends LogSettings implements IReporter {
         }
     }
 
-    @Override
     public void setTestRunnerLogs() {
         
     }

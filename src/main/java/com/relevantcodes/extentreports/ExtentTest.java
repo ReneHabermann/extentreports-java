@@ -89,7 +89,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * @param details 
      *      Details of the step
      */
-    @Override
+    
     public void log(LogStatus logStatus, String stepName, String details) {
         Log evt = new Log();
         
@@ -126,7 +126,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * @param t 
      *      Exception
      */
-    @Override
+    
     public void log(LogStatus logStatus, String stepName, Throwable t) {
         ExceptionInfo exceptionInfo = ExceptionUtil.createExceptionInfo(t, (Test) getTest());
         getInternalTest().setException(exceptionInfo);
@@ -159,7 +159,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * @param t 
      *      Exception
      */
-    @Override
+    
     public void log(LogStatus logStatus, Throwable t) {
         log(logStatus, null, t);
     }
@@ -183,7 +183,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * @param details 
      *      Details of the step
      */
-    @Override
+    
     public void log(LogStatus logStatus, String details) {
         log(logStatus, null, details);
     }
@@ -195,7 +195,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * @param description
      *      Description of the test
      */
-    @Override
+    
     public void setDescription(String description) {
         test.setDescription(description);        
     }
@@ -204,7 +204,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * <p>
      * Gets the current test description
      */
-    @Override
+    
     public String getDescription() {
         return test.getDescription();
     }
@@ -213,7 +213,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * <p>
      * Provides the start time of the current test
      */
-    @Override
+    
     public Date getStartedTime() {
         return test.getStartedTime();
     }
@@ -233,7 +233,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * @param startedTime
      *      Test's start time
      */
-    @Override
+    
     public void setStartedTime(Date startedTime) {
         test.setStartedTime(startedTime);
     }
@@ -242,7 +242,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * <p>
      * Provides the end time of the current test
      */
-    @Override
+    
     public Date getEndedTime() {
         return test.getEndedTime();
     }
@@ -262,7 +262,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * @param endedTime
      *      Test's end time
      */
-    @Override
+    
     public void setEndedTime(Date endedTime) {
         test.setEndedTime(endedTime);
     }
@@ -282,7 +282,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * @return
      *      A formed HTML img tag
      */
-    @Override
+    
     public String addScreenCapture(String imagePath) {
         String screenCaptureHtml = isPathRelative(imagePath)
                 ? ScreenshotHtml.getSource(imagePath).replace("file:///", "")
@@ -334,7 +334,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * @return 
      *      A formed HTML video tag with the supplied path
      */
-    @Override
+    
     public String addScreencast(String screencastPath) {
         String screencastHtml = isPathRelative(screencastPath) 
                 ? ScreencastHtml.getSource(screencastPath).replace("file:///", "") 
@@ -365,7 +365,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * @return 
      *      A {@link ExtentTest} object
      */
-    @Override
+    
     public ExtentTest assignCategory(String... categories) {
         List<String> list = new ArrayList<String>();
         
@@ -392,7 +392,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * @param authors Author name
      * @return {@link ExtentTest}
      */
-    @Override
+    
     public ExtentTest assignAuthor(String... authors) {
         List<String> list = new ArrayList<String>();
         
@@ -417,7 +417,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * @return 
      *      An {@link ExtentTest} object. Parent test which adds the node as its child.
      */
-    @Override
+    
     public ExtentTest appendChild(ExtentTest node) {
         Test internalNode = node.getInternalTest();
         
@@ -456,7 +456,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * @return 
      *      {@link LogStatus}
      */
-    @Override
+    
     public LogStatus getRunStatus() {
         return runStatus;
     }
@@ -468,7 +468,7 @@ public class ExtentTest implements IExtentTestClass, Serializable {
      * @return 
      *      A {@link ITest} object
      */
-    @Override
+    
     public ITest getTest() {
         return test;
     }

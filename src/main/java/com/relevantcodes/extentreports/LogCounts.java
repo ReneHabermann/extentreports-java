@@ -48,7 +48,7 @@ public class LogCounts implements Serializable {
 
         // recursively count status events
         for (Test node : test.getNodeList()) {
-            getLogCounts(node);
+//            getLogCounts(node);
         }
         
         HashMap<LogStatus, Integer> logCounts = new HashMap<LogStatus, Integer>();

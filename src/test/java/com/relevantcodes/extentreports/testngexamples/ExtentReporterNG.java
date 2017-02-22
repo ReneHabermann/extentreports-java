@@ -22,7 +22,6 @@ import com.relevantcodes.extentreports.ReporterType;
 public class ExtentReporterNG implements IReporter {
 	private ExtentReports extent;
 
-	@Override
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
 		extent = new ExtentReports("src/test/java/com/relevantcodes/extentreports/results/ReportListenerTest.html", true);
 		extent.startReporter(ReporterType.DB, "src/test/java/com/relevantcodes/extentreports/results/extent.db");

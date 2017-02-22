@@ -11,7 +11,6 @@ public class TestReporter implements IReporter {
     @SuppressWarnings("unused")
     private TestReporter testReporter;
 
-    @Override
     public void start(Report report) {
         this.report = report;
         getExceptionTestMap();
@@ -21,22 +20,18 @@ public class TestReporter implements IReporter {
         return report.getExceptionTestMap();
     }
 
-    @Override
     public void stop() {
 
     }
 
-    @Override
     public void flush() {
 
     }
 
-    @Override
     public void addTest(Test test) {
 
     }
 
-    @Override
     public void setTestRunnerLogs() {
 
     }

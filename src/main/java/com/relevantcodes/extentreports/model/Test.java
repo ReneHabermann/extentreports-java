@@ -265,7 +265,6 @@ public class Test implements ITest, Serializable {
         return id;
     }
     
-    @Override
     public void setUUID(UUID id) {
     this.id = id;
     }
@@ -350,7 +349,6 @@ public class Test implements ITest, Serializable {
     }
     
     // nodes
-    @Override
     public void hasChildNodes(boolean val) {
         hasChildNodes = val;
     }

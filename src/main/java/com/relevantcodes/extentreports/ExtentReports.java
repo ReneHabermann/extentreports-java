@@ -74,7 +74,7 @@ public class ExtentReports extends Report implements Serializable {
     public ExtentReports(String filePath, Boolean replaceExisting, DisplayOrder displayOrder, NetworkMode networkMode, Locale locale) {
         replaceExisting = replaceExisting == null ? true : replaceExisting;
         displayOrder = displayOrder == null ? DisplayOrder.OLDEST_FIRST : displayOrder;
-        networkMode = networkMode == null ? NetworkMode.ONLINE : networkMode;
+        networkMode = networkMode == null ? NetworkMode.OFFLINE : networkMode;
         locale = locale == null ? Locale.ENGLISH : locale;
         
         setFilePath(filePath);
