@@ -131,7 +131,6 @@ public class ExtentTest implements IExtentTestClass, Serializable {
         ExceptionInfo exceptionInfo = ExceptionUtil.createExceptionInfo(t, (Test) getTest());
         getInternalTest().setException(exceptionInfo);
         
-        System.out.println(exceptionInfo.getStackTrace());
         String tag = "pre";
         String s = exceptionInfo.getStackTrace();
         if (s.contains("<") || s.contains(">"))
